@@ -81,7 +81,7 @@ DATABASES = {
         'NAME': 'hariom',
         'USER': 'postgres',
         'PASSWORD': '1234',
-        'HOST': '',
+        'HOST': 'thesparks.herokuapp.com',
     }
 }
 
