@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    {% for message in messages %}
+  <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+  <strong>{{message.tags}}</strong> {{message}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  </div>
+  {% endfor %}
+  <div class="jumbotron">
+  <div class="container my-5">
+  <form method='POST' action='/trans/'>
+  {% csrf_token %}
+   <h3>make payment</h3>
+   <select class="custom-select custom-select-sm my-1" name="customer1">
+    <option selected>select customer</option>
+    {% for i in all %}
+    <option>{{i.name}}</option>
+    {% endfor %}
+   </select>
+    <select class="custom-select custom-select-sm my-2" name="customer2">
+    <option selected>make transfer to</option>
+    {% for i in all %}
+    <option>{{i.name}}</option>
+    {% endfor %}
+   </select>
+   <button type="submit">next</button>
+</div>
+  </div> 
+  </form> 
+  </div>
+  </body>
+</html>
