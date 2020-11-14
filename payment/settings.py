@@ -26,7 +26,7 @@ SECRET_KEY = '8g@b$ub+rsh)zb_1o#(0qz)xu5=f8$0%&2-0o$7+!#vfxl3!-='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1','thesparks.herokuapp.com']
 
 
 # Application definition
@@ -80,8 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'hariom',
         'USER': 'postgres',
-        'PASSWORD': '1234',
-        'HOST':'*'
+        'PASSWORD': '1234'
     }
 }
 
