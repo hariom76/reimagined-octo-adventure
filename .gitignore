@@ -1,2 +1,5 @@
-reel/
-SQlite3
+*.pyc
+db.sqlite3
+reel
+__pycache__
+local_settings.py
