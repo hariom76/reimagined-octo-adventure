@@ -75,25 +75,25 @@ WSGI_APPLICATION = 'payment.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+#DATABASES = {
+ #   'default': {
+ #       'ENGINE': 'django.db.backends.postgresql_psycopg2',
+ #       'NAME': 'hariom',
+ #       'USER': 'postgres',
+ #      'PASSWORD': '1234',
+ #       'HOST': '',
+ #      'PORT': '',
+ #  }
+#}
+
+#db_from_env = dj_database_url.config(conn_max_age=500)
+#DATABASES['default'].update(db_from_env)
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'hariom',
-        'USER': 'postgres',
-        'PASSWORD': '1234',
-        'HOST': 'localhost',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': BASE_DIR / 'db.sqlite3',
-#    }
-#}
 #import dj-database-url
 #db_from_env = dj_database_url.config()
 #DATABASES['default'].update(db_from_env)
