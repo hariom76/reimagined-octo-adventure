@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
+import django_heroku
 from pathlib import Path,os
 #import dj_database_url
 from django.contrib.messages import constants as messages
@@ -121,3 +122,4 @@ STATIC_FILES= os.path.join(BASE_DIR,'static_files')
 MESSAGE_TAGS = {
     messages.ERROR: 'danger',
 }
+django_heroku.settings(locals())
