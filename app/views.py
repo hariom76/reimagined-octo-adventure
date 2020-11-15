@@ -31,7 +31,7 @@ def confirm(request,id1,id2):
     if int(pay) > user1.current_balance:
         #return HttpResponse(user1.name+", you don't have sufficient balance!!")
         messages.error(request,user1.name+", you don't have sufficient balance!!")
-        return redirect("trans")
+        return redirect("/")
     else:
         add_balance = user2.current_balance + int(pay)
         reduce_balance = user1.current_balance - int(pay)
