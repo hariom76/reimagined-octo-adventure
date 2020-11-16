@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>start!</title>
+  </head>
+  <body>
+    {% for message in messages %}
+  <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+  <strong>Message!!</strong> {{  message}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  </div>
+  {% endfor %}
+       <header class="masthead mb-auto">
+          <nav class="nav nav-masthead justify-content-left bg-dark">
+            <a class="nav-link active" href="{% url 'base' %}">Home</a>
+            <a class="nav-link" href="{% url 'transfer'%}">all transaction</a>
+          </nav>
+      </header>
+  <div class="jumbotron ">   
+  <center><h2>welcome {{user.name}}</h2>
+          <h3> Balance avl. Rs {{ user.current_balance}}</h3>
+  </cenetr>
+  <div class="container my-5 ">
+  <form method='POST' action='{% url 'start' %}'>
+  {% csrf_token %}
+   <h3>make payment</h3>
+   <select class="custom-select custom-select-sm my-1" name="customer">
+    <option selected>select customer</option>
+    {% for i in all %}
+    {% if i.id != 1 %}
+    <option>{{i.name}}</option>
+    {% endif %}
+    {% endfor %}
+    </select>
+    <input type="number" class="form-control" placeholder="enter amount" name="pay">
+    <button type="submit" class="btn btn-success ">PAY</button>  
+  </form> 
+  <table class="table mt-4">
+  <thead class="thead-dark">
+  <center><h3>customer's list</h3></center>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Balance(Rs)</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for i in all %}
+  {% if i.id != 1%}
+    <tr>
+      <td>{{i.name}}</td>
+      <td>{{i.email}}</td>
+      <td>{{i.current_balance}}</td>
+    </tr>
+   {% endif %} 
+   {% endfor %} 
+  </tbody>
+</table>
+</div>
+  </div>
+  </body>
+</html>

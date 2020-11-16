@@ -8,6 +8,5 @@ class bank_users(models.Model):
 
     
 class transfer_money(models.Model):
-    from_user = models.CharField(max_length=50)
     to_user = models.CharField(max_length=50)
-    amount = models.IntegerField()
+    amount = models.IntegerField()    
