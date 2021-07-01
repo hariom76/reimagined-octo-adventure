@@ -27,7 +27,7 @@ SECRET_KEY = '8g@b$ub+rsh)zb_1o#(0qz)xu5=f8$0%&2-0o$7+!#vfxl3!-='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://twinkleloot.herokuapp.com']
+ALLOWED_HOSTS = 'https://twinkleloot.herokuapp.com'
 
 
 # Application definition
