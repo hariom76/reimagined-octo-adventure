@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-import django_heroku
+#import django_heroku
 from pathlib import Path,os
 #import dj_database_url
 from django.contrib.messages import constants as messages
@@ -73,11 +73,30 @@ TEMPLATES = [
 WSGI_APPLICATION = 'payment.wsgi.application'
 
 
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.sqlite3',
+#    }
+#}
 DATABASES = {
+
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+
+        'NAME': 'DB1',
+
+        'USER': 'postgres',
+
+        'PASSWORD': 'hariom',
+
+        'HOST': 'localhost',
+
+        'PORT': '5432',
+
     }
+
 }
 
 # Password validation
@@ -122,4 +141,4 @@ STATIC_FILES= os.path.join(BASE_DIR,'static_files')
 MESSAGE_TAGS = {
     messages.ERROR: 'danger',
 }
-django_heroku.settings(locals())
+#django_heroku.settings(locals())
