@@ -91,7 +91,7 @@ DATABASES = {
 
         'PASSWORD': 'hariom',
 
-        'HOST': 'localhost',
+        'HOST': '*',
 
         'PORT': '5432',
 
