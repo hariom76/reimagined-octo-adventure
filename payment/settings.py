@@ -91,7 +91,7 @@ DATABASES = {
 
         'PASSWORD': 'hariom',
 
-        'HOST': 'postgres',
+        'HOST': '*',
 
         'PORT': '5432',
 
