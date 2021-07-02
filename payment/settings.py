@@ -91,7 +91,7 @@ DATABASES = {
 
         'PASSWORD': 'hariom',
 
-        'HOST': '*',
+        'HOST': 'https://twinkleloot.herokuapp.com',
 
         'PORT': '5432',
 
