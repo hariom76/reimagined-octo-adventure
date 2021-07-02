@@ -27,7 +27,7 @@ SECRET_KEY = '8g@b$ub+rsh)zb_1o#(0qz)xu5=f8$0%&2-0o$7+!#vfxl3!-='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://twinkleloot.herokuapp.com','www.twinkleloot.herokuapp.com','twinkleloot.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -73,31 +73,31 @@ TEMPLATES = [
 WSGI_APPLICATION = 'payment.wsgi.application'
 
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': BASE_DIR / 'db.sqlite3',
-#    }
-#}
 DATABASES = {
-
     'default': {
-
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-
-        'NAME': 'DB1',
-
-        'USER': 'postgres',
-
-        'PASSWORD': 'hariom',
-
-        'HOST': 'postgres',
-
-        'PORT': '5432',
-
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
-
 }
+#DATABASES = {
+
+#   'default': {
+
+#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+
+#        'NAME': 'DB1',
+
+#        'USER': 'postgres',
+
+#        'PASSWORD': 'hariom',
+
+#        'HOST': 'postgres',
+
+#        'PORT': '5432',
+
+#    }
+
+#}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
